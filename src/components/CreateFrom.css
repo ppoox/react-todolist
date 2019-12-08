@@ -1,0 +1,14 @@
+.form-container {
+  width: 80%;
+  margin: 0 auto;
+}
+.insert {
+  margin: 0 40px;
+}
+#text {
+  width: 80%;
+  float: left;
+}
+.form-container button {
+  float: right;
+}
