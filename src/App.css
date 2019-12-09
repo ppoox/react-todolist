@@ -1,4 +1,8 @@
 .App {
   text-align: center;
+  /* background-color: #cecece; */
+}
+
+.App > h3 {
   background-color: #cecece;
 }
