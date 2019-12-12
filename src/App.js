@@ -13,7 +13,26 @@ class App extends Component {
     this.setState({
       todos: this.state.todos.concat({
         id: this.id++,
-        text
+        text,
+        isToggle: false
+      })
+    });
+  };
+
+  handleRemove = id => {
+    this.setState({
+      todos: this.state.todos.filter(todo => todo.id !== id)
+    });
+  };
+
+  handleToggle = id => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          return { ...todo, isToggle: !todo.isToggle };
+        } else {
+          return todo;
+        }
       })
     });
   };
@@ -25,7 +44,7 @@ class App extends Component {
         <h3>TODO LIST</h3>
         <CreateFrom onInsert={this.handleInsert} />
         <div>
-          <TodoList todos={todos} />
+          <TodoList todos={todos} onRemove={this.handleRemove} onToggle={this.handleToggle} />
         </div>
       </div>
     );

@@ -15,6 +15,10 @@ class CreateFrom extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
+    if (this.state.text === "" || this.state.text === undefined) {
+      return false;
+    }
+
     this.props.onInsert(this.state.text);
     this.setState({
       text: ""
@@ -25,13 +29,7 @@ class CreateFrom extends Component {
     return (
       <div className="form-container">
         <form className="insert" onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            id="text"
-            name="text"
-            value={this.state.text}
-            onChange={this.handleChange}
-          />
+          <input type="text" id="text" name="text" value={this.state.text} onChange={this.handleChange} />
           <button type="submit">저장</button>
         </form>
       </div>

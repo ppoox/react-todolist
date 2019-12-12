@@ -11,4 +11,6 @@
 }
 .form-container button {
   float: right;
+  border-radius: 20px;
+  width: 13%;
 }

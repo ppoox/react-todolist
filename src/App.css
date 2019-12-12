@@ -1,8 +1,12 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
   /* background-color: #cecece; */
+  max-width: 640px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.App > h3 {
+.App h3 {
+  text-align: center;
   background-color: #cecece;
 }
