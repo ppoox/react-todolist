@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./CreateFrom.css";
+import { create } from "../store/modules/todo";
+import { connect } from "react-redux";
 
 class CreateFrom extends Component {
   state = {
@@ -37,4 +39,12 @@ class CreateFrom extends Component {
   }
 }
 
-export default CreateFrom;
+const mapStateToProps = state => ({
+  todos: state.todo.todos
+});
+
+const mapDispatchToProps = dispatch => ({
+  create: () => dispatch(create())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateFrom);
