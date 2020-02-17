@@ -1,3 +1,5 @@
+import { createAction, handleActions } from 'redux-actions';
+
 // ducks패턴을 사용하여 reducer 작성
 
 // action
@@ -6,21 +8,9 @@ const REMOVE = "./todo/REMOVE";
 const TOGGLE = "./todo/TOGGLE";
 
 // action creator
-export const create = text => {
-  {
-    type: CREATE;
-  }
-};
-export const remove = id => {
-  {
-    type: REMOVE;
-  }
-};
-export const toggle = id => {
-  {
-    type: TOGGLE;
-  }
-};
+export const create = createAction(CREATE, text => text);
+export const remove = createAction(REMOVE, id => id);
+export const toggle = createAction(TOGGLE, id => id);
 
 let id = 1;
 const initialState = {
